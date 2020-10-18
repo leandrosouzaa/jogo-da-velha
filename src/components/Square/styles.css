@@ -1,0 +1,42 @@
+.square {
+   background: transparent;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: calc(60px + .5w);
+   color: #25a1e8;
+   border: 3px solid #3c3c3c;
+   transition: background-color 0.4s;
+}
+
+.square:after {
+   content: '';
+   display: block;
+   padding-bottom: 100%;
+}
+
+.blocked {
+   cursor: not-allowed;
+}
+
+.square:hover {
+   background-color: rgba(37, 161, 232, 0.1);
+}
+
+.square-top {
+   border-top: 0;
+}
+
+.square-left {
+   border-left: 0;
+}
+
+.square-right {
+   border-right: 0;
+}
+
+.square-bottom {
+   border-bottom: 0;
+}
