@@ -1,5 +1,5 @@
 import React from 'react';
-import {GameInfo, Restart, Square} from '../components';
+import {GameInfo, Points, Restart, Square} from '../components';
 import { useGame } from '../hooks/game';
 
 const Home: React.FC = () => {
@@ -15,6 +15,7 @@ const Home: React.FC = () => {
                ))}
             </div>
             <Restart />
+            <Points />
          </div>
       </main>
    );

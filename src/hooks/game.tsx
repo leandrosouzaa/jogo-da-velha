@@ -9,6 +9,7 @@ interface GameContextData {
    isBlocked: boolean;
    lastWinner: string;
    restart():void;
+   points: PointsProps;
 }
 
 interface PointsProps {
@@ -36,7 +37,6 @@ const GameProvider: React.FC = ({children}) => {
             alert("Deu velha!!")
             setPoints({...points, tie: points.tie + 1});
          }
-
          return;
       }
       
@@ -60,7 +60,8 @@ const GameProvider: React.FC = ({children}) => {
       setIsXNext,
       isBlocked,
       lastWinner,
-      restart
+      restart,
+      points
    }
 
    return (

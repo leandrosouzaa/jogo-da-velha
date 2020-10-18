@@ -1,0 +1,18 @@
+.points-container {
+   margin-top: 32px;
+   display: flex;
+   justify-content: space-around;
+}
+
+.points-container div {
+   width: 100%;
+   text-align: center;
+}
+
+.points-cotainer p {
+   font-size: 24px;
+}
+
+.points-container strong {
+   font-size: 32px;
+}
