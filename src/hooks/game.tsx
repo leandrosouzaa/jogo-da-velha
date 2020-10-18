@@ -14,6 +14,7 @@ interface GameContextData {
 interface PointsProps {
    x: number;
    o: number;
+   tie: number
 }
 
 const GameContext = createContext({} as GameContextData);
@@ -21,15 +22,23 @@ const GameContext = createContext({} as GameContextData);
 const GameProvider: React.FC = ({children}) => {
    const [squares, setSquares] = useState<string[]>(Array(9).fill(''));
    const [isXNext, setIsXNext] = useState(true);
-   const [points, setPoints] = useState<PointsProps>({o: 0, x: 0});
+   const [points, setPoints] = useState<PointsProps>({o: 0, x: 0, tie: 0});
    const [lastWinner, setLastWinner] = useState('');
    const [isBlocked, setIsBlocked] = useState(false)
 
    useEffect(() => {
+      
       const winner: string = checkWinner(squares); 
       
-      if (!winner)
+      if (!winner) {
+         if (!squares.includes('')) {
+            setIsBlocked(true);
+            alert("Deu velha!!")
+            setPoints({...points, tie: points.tie + 1});
+         }
+
          return;
+      }
       
       setLastWinner(winner);
       setPoints({...points, [winner.toLowerCase()]: points[winner.toLowerCase()] + 1});
