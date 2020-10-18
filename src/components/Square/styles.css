@@ -5,7 +5,7 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   font-size: calc(60px + .5w);
+   font-size: calc(60px + .5vw);
    color: #25a1e8;
    border: 3px solid #3c3c3c;
    transition: background-color 0.4s;
@@ -39,4 +39,8 @@
 
 .square-bottom {
    border-bottom: 0;
+}
+
+.o-color {
+   color: #46afec;
 }

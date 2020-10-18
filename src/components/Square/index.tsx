@@ -16,26 +16,27 @@ const borderPositions = {
 }
 
 const Square: React.FC<SquareProps> = ({value, index}) => {
-   const {squares, setSquares} = useGame()
+   const {squares, setSquares, isXNext, setIsXNext, isBlocked} = useGame()
    
    function handleClickSquare() {
       if (squares[index])
          return
 
       const newSquares = [...squares];
-      newSquares[index] = 'X';
+      newSquares[index] = isXNext ? 'X' : 'O';
+      setIsXNext(!isXNext)
       setSquares(newSquares);
-      console.log('caiu')
    }
    return (
       <button 
          className={`
             square 
-            ${value && "blocked"}
+            ${(value || isBlocked) && "blocked"}
             ${borderPositions.top.includes(index) && "square-top"}
             ${borderPositions.left.includes(index) && "square-left"}
             ${borderPositions.right.includes(index) && "square-right"}
             ${borderPositions.bottom.includes(index) && "square-bottom"}
+            ${value === 'O' && "o-color"}
          `} 
          onClick={() => {handleClickSquare()}}
       >
