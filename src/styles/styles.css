@@ -23,3 +23,22 @@ h1, h2, h3, h4, h5, h6, strong {
 button {
    cursor: pointer;
 }
+
+.container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   height: 100vh;
+   padding: 16px
+}
+
+.game-container {
+   max-width: 630px;
+   width: 100%;
+}
+
+.squares-container {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+}
