@@ -1,0 +1,17 @@
+.restart {
+   margin-top: 24px;
+   height: 44px;
+   margin-right: auto;
+   margin-left: auto;
+   font-weight: 500;
+   width: 100%;
+   border-radius: 8px;
+   border: 0;
+   color: #fff;
+   background: #25a1e8;
+   transition: background-color 0.4s;
+}
+
+.restart:hover {
+   background-color: #168cd0;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import {GameInfo, Square} from '../components';
+import {GameInfo, Restart, Square} from '../components';
 import { useGame } from '../hooks/game';
 
 const Home: React.FC = () => {
@@ -14,7 +14,7 @@ const Home: React.FC = () => {
                   <Square key={index} value={square} index={index} />
                ))}
             </div>
-            
+            <Restart />
          </div>
       </main>
    );

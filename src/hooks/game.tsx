@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import checkWinner from '../utils/checkWinner'
 
 interface GameContextData {
@@ -8,6 +8,7 @@ interface GameContextData {
    setIsXNext(value: boolean): void;
    isBlocked: boolean;
    lastWinner: string;
+   restart():void;
 }
 
 interface PointsProps {
@@ -35,7 +36,13 @@ const GameProvider: React.FC = ({children}) => {
       setIsBlocked(true);
       alert(`O Jogador ${winner} ganhou! Parabéns!!`);
       // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, [squares])
+   }, [squares]);
+
+   const restart = useCallback(() => {
+      setSquares(Array(9).fill(''));
+      setIsXNext(true);
+      setIsBlocked(false)
+   }, [])
 
    const valuesToProvider = {
       squares,
@@ -43,7 +50,8 @@ const GameProvider: React.FC = ({children}) => {
       isXNext, 
       setIsXNext,
       isBlocked,
-      lastWinner
+      lastWinner,
+      restart
    }
 
    return (
