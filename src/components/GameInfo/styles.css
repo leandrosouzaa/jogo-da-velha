@@ -1,0 +1,14 @@
+.player {
+   font-size: 20px;
+   margin-bottom: 24px;
+}
+
+.player-value {
+   color: #25a1e8;
+   font-weight: 500;
+}
+
+.game-info {
+   display: flex;
+   justify-content: space-between;
+}

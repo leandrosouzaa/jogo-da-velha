@@ -19,7 +19,7 @@ const Square: React.FC<SquareProps> = ({value, index}) => {
    const {squares, setSquares, isXNext, setIsXNext, isBlocked} = useGame()
    
    function handleClickSquare() {
-      if (squares[index])
+      if (squares[index] || isBlocked)
          return
 
       const newSquares = [...squares];

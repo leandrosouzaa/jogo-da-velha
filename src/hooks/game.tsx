@@ -6,7 +6,8 @@ interface GameContextData {
    setSquares(newSquares: string[]): void;
    isXNext: boolean;
    setIsXNext(value: boolean): void;
-   isBlocked: boolean
+   isBlocked: boolean;
+   lastWinner: string;
 }
 
 interface PointsProps {
@@ -41,7 +42,8 @@ const GameProvider: React.FC = ({children}) => {
       setSquares,
       isXNext, 
       setIsXNext,
-      isBlocked
+      isBlocked,
+      lastWinner
    }
 
    return (

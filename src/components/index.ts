@@ -1,3 +1,5 @@
 import Square from './Square';
+import GameInfo from './GameInfo';
 
-export {Square}
+
+export {Square, GameInfo}
