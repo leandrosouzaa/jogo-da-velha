@@ -1,10 +1,12 @@
 import React from 'react';
+import { GameProvider } from './hooks/game';
+import Home from './pages/Home';
 
-function App() {
+const App:React.FC = () => {
   return (
-    <div className="App">
-      <h1>Tic Tac Toe</h1>
-    </div>
+    <GameProvider>
+      <Home />
+    </GameProvider>
   );
 }
 
